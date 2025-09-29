@@ -1,5 +1,5 @@
-package com.example.narxoz.controllers;
-import com.example.narxoz.lab2.Student;
+package com.example.lab3.controllers;
+import com.example.lab3.class1.Student;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;

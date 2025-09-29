@@ -1,4 +1,4 @@
-package com.example.narxoz.lab2;
+package com.example.lab3.class1;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
