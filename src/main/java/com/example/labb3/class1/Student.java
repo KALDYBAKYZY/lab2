@@ -1,8 +1,5 @@
-package com.example.lab3.class1;
-
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+package com.example.labb3.class1;
+import lombok.*;
 
 @Data
 @AllArgsConstructor

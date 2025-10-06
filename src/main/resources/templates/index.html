@@ -1,62 +1,62 @@
-<!--<!DOCTYPE html>-->
-<!--<html lang="en" xmlns:th="http://www.thymeleaf.org">-->
-<!--<head>-->
-<!--    <meta charset="UTF-8">-->
-<!--    <title>Products</title>-->
-<!--    <style>-->
-<!--        body {-->
-<!--            font-family: Arial, sans-serif;-->
-<!--            background-color: white;-->
-<!--            align-items: center;-->
-<!--        }-->
-<!--        h1 {-->
-<!--            text-align: center;-->
-<!--        }-->
-<!--        .container {-->
-<!--            display: grid;-->
-<!--            grid-template-columns: repeat(3, 1fr);-->
-<!--            gap: 20px;-->
-<!--            max-width: 1280px;-->
-<!--            margin: 0 auto;-->
-<!--        }-->
-<!--        .product-card {-->
-<!--            background-color: #E4EDEA;-->
-<!--            border-radius: 10px;-->
-<!--            padding: 15px;-->
-<!--            max-width: 350px;-->
-<!--            text-align: center;-->
-<!--            margin: 15px;-->
-<!--        }-->
-<!--        .product-card h2{-->
-<!--            font-size: 30px;-->
-<!--            color: rgba(0,43,129,0.87)-->
-<!--        }-->
-<!--        .button {-->
-<!--            background-color: darkgreen;-->
-<!--            color: white;-->
-<!--            padding: 10px 20px;-->
-<!--            border: none;-->
-<!--            border-radius: 6px;-->
-<!--            font-weight: bold;-->
-<!--            margin-bottom: 20px;-->
-<!--        }-->
-<!--        .price {-->
-<!--            font-size: 22px;-->
-<!--            font-weight: bold;-->
-<!--            color: green;-->
-<!--            margin: 15px 0;-->
-<!--        }-->
-<!--    </style>-->
-<!--</head>-->
-<!--<body>-->
-<!--<h1>Electronic shop items</h1><br>-->
-<!--<div class="container">-->
-<!--    <div class="product-card" th:each="product : ${products}">-->
-<!--        <h2 th:text="${product.name}"></h2>-->
-<!--        <p th:text="${product.description}"></p>-->
-<!--        <p class="price" th:text="${product.price + '$'}"></p>-->
-<!--        <button class="button">DETAILS</button>-->
-<!--    </div>-->
-<!--</div>-->
-<!--</body>-->
-<!--</html>-->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Products</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            align-items: center;
+        }
+        h1 {
+            text-align: center;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+        .product-card {
+            background-color: #E4EDEA;
+            border-radius: 10px;
+            padding: 15px;
+            max-width: 350px;
+            text-align: center;
+            margin: 15px;
+        }
+        .product-card h2{
+            font-size: 30px;
+            color: rgba(0,43,129,0.87)
+        }
+        .button {
+            background-color: darkgreen;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .price {
+            font-size: 22px;
+            font-weight: bold;
+            color: green;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+<h1>Electronic shop items</h1><br>
+<div class="container">
+    <div class="product-card" th:each="product : ${products}">
+        <h2 th:text="${product.name}"></h2>
+        <p th:text="${product.description}"></p>
+        <p class="price" th:text="${product.price + '$'}"></p>
+        <button class="button">DETAILS</button>
+    </div>
+</div>
+</body>
+</html>

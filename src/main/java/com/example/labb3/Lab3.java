@@ -1,5 +1,4 @@
-package com.example.lab3;
-
+package com.example.labb3;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -7,8 +6,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class Lab3 {
 
     public static void main(String[] args) {
-        SpringApplication.run(Lab3.class, args);
+        SpringApplication.run(com.example.labb3.Lab3.class, args);
     }
 
 }
+
 

@@ -4,33 +4,79 @@
       layout:decorate="~{layout}">
 <body>
 <div layout:fragment="content">
+
     <div class="d-flex justify-content-between align-items-center mb-3">
-        <h2>Task List</h2>
-        <a class="btn btn-primary" th:href="@{/add}">Add Task</a>
+        <h4 class="mb-0">All Tasks</h4>
+        <button class="btn btn-warning fw-semibold" data-bs-toggle="modal" data-bs-target="#addModal">
+            + Add New Task
+        </button>
     </div>
 
-    <table class="table table-bordered">
-        <thead>
-        <tr>
-            <th>Name</th>
-            <th>Deadline</th>
-            <th>Completed</th>
-            <th>Actions</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr th:each="task : ${tasks}">
-            <td th:text="${task.name}"></td>
-            <td th:text="${task.deadlineDate}"></td>
-            <td>
-                <span th:text="${task.completed} ? 'Yes' : 'No'"></span>
-            </td>
-            <td>
-                <a class="btn btn-sm btn-info" th:href="@{/task/{id}(id=${task.id})}">Details</a>
-            </td>
-        </tr>
-        </tbody>
-    </table>
+    <div class="card shadow-sm">
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table table-hover align-middle mb-0">
+                    <thead>
+                    <tr class="table-warning">
+                        <th scope="col">ID</th>
+                        <th scope="col">NAME</th>
+                        <th scope="col">DEADLINE DATE</th>
+                        <th scope="col">IS COMPLETED</th>
+                        <th scope="col">DETAILS</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="task : ${tasks}">
+                        <td th:text="${task.id}"></td>
+                        <td th:text="${task.name}"></td>
+                        <td th:text="${task.deadlineDate}"></td>
+                        <td>
+                <span th:text="${task.completed ? 'YES' : 'NO'}"
+                      th:classappend="${task.completed ? 'badge bg-success' : 'badge bg-secondary'}"></span>
+                        </td>
+                        <td>
+                            <a th:href="@{/task(id=${task.id})}" class="btn btn-sm btn-outline-warning">DETAILS</a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <form th:action="@{/add}" method="post">
+                    <div class="modal-header bg-warning">
+                        <h5 class="modal-title text-white" id="addModalLabel">New Task</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label class="form-label">Task Name</label>
+                            <input type="text" name="name" class="form-control" placeholder="Task name.." required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Description</label>
+                            <textarea name="description" class="form-control" rows="3" placeholder="Optional"></textarea>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Deadline</label>
+                            <input type="date" name="deadlineDate" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-warning">Add Task</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
 </div>
 </body>
 </html>
